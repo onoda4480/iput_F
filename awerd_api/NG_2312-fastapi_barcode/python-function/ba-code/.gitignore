@@ -1,6 +1,0 @@
-*.DS_Store
-images/*
-!images/IM_99.png
-/__pycache__
-*.pt
-*.jpg
