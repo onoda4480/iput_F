@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<style>
+  
+.water{
+ width:250px;
+ font-size: 50px;
+}
+
+
+/* エンジンボタン */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn-engine-start {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+  background: white;
+  background: -webkit-linear-gradient(
+    315deg,
+    white 0%,
+    white 22%,
+    #ddd 44%,
+    #a5a5a5 52%,
+    black 100%
+  );
+  background: linear-gradient(
+    135deg,
+    white 0%,
+    white 22%,
+    #ddd 44%,
+    #a5a5a5 52%,
+    black 100%
+  );
+  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-engine-start:before {
+  position: absolute;
+  top: 7.5px;
+  left: 7.5px;
+
+  display: block;
+
+  width: 130px;
+  height: 130px;
+
+  content: "";
+
+  border-radius: 50%;
+  background: #515151;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #515151 0%,
+    #515151 19%,
+    #ededed 50%,
+    white 77%,
+    white 100%
+  );
+  background: -webkit-linear-gradient(
+    315deg,
+    #515151 0%,
+    #515151 19%,
+    #ededed 50%,
+    white 77%,
+    white 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #515151 0%,
+    #515151 19%,
+    #ededed 50%,
+    white 77%,
+    white 100%
+  );
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#515151', endColorstr='#ffffff', GradientType=1);
+}
+
+.btn-engine-start:hover a.btn-engine-start-in:before {
+  top: 20px;
+
+  background: #61c419;
+  -webkit-box-shadow: 0 0 6px rgba(97, 196, 25, 0.3);
+  box-shadow: 0 0 6px rgba(97, 196, 25, 0.3);
+}
+
+.btn-engine-start:hover a.btn-engine-start-in {
+  padding: 37px 0 0;
+
+  color: #b4e391;
+  -webkit-box-shadow: inset 0 1px 1px black, 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px black, 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 6px rgba(97, 196, 25, 0.3), 0 0 6px rgba(97, 196, 25, 0.3);
+}
+
+a.btn-engine-start-in {
+  font-size: 14px;
+  line-height: 1.2;
+
+  position: absolute;
+  top: 18px;
+  left: 18px;
+
+  width: 109px;
+  height: 109px;
+  padding: 35px 0 0;
+
+  color: #fff;
+  border-radius: 50%;
+  background: #959595;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #959595 0%,
+    #0d0d0d 46%,
+    #010101 50%,
+    #0a0a0a 69%,
+    #1b1b1b 100%
+  );
+  background: -webkit-linear-gradient(
+    315deg,
+    #959595 0%,
+    #0d0d0d 46%,
+    #010101 50%,
+    #0a0a0a 69%,
+    #1b1b1b 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #959595 0%,
+    #0d0d0d 46%,
+    #010101 50%,
+    #0a0a0a 69%,
+    #1b1b1b 100%
+  );
+  -webkit-box-shadow: inset 0 2px 2px white, 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 2px white, 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#959595', endColorstr='#1b1b1b', GradientType=1);
+/* エンジンボタン */
+
+}
+  </style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+    <link rel="stylesheet" href="your_stylesheet.css"> <!-- あなたのスタイルシートのリンクを追加 -->
+</head>
+
+
+<body background="sample3.png">
+
+<head>
+  <title>自動水やりシステム</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'temp.css') }}">
+</head>
+
+<head>
+  <div style="text-align:center;">
+    <font size = "7">グラフ</font>
+  </div>
+</head>
+
+<h1>
+  <div style="text-align:left;">
+    <legend class = "name">植物の種類</legend>
+    <select class = "water">
+      <option value="10">観葉植物</option>
+      <option value="20">草花</option>
+    <select>
+  </div>
+<h1>  
+
+  
+
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="multiLineGraph"></div>
+  <script>
+    var trace1 = {
+      x: ['2020', '2021', '2022', '2023'],
+      y: [10, 15, 13, 17],
+      mode: 'lines',
+      name: 'サンプルデータ1'
+    };
+
+    var trace2 = {
+      x: ['2020', '2021', '2022', '2023'],
+      y: [16, 5, 11, 9],
+      mode: 'lines',
+      name: 'サンプルデータ2'
+    };
+
+    var layout = {
+      xaxis: {title: '年'},
+      yaxis: {title: '値'}
+    };
+
+    var data = [trace1, trace2];
+
+    Plotly.newPlot('multiLineGraph', data, layout);
+  </script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Button Example</title>
+    <link rel="stylesheet" href="your_stylesheet.css"> <!-- あなたのスタイルシートのリンクを追加 -->
+</head>
+<body>
+    <div class="btn-engine-start">
+        <a href="#" class="btn btn-engine-start-in" id="startButton">START<br>STOP<br><span>水やりボタン</span></a>
+    </div>
+    <script src="your_script.js"></script> <!-- あなたの JavaScript ファイルのリンクを追加 -->
+</body>
+<script>
+
+// your_script.js
+<button id="runButton"></button>
+
+document.getElementById("startButton").addEventListener("click", function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "area_IoT4.py", true);
+    xhr.send();
+});
+
+</script> 
+
+<button id="runButton">Run Python Code</button>
+<script>
+  document.getElementById('runButton').addEventListener('click', function() {
+      fetch('/run_python_code', { method: 'POST' })
+          .then(response => response.json())
+          .then(data => alert(data.message))
+          .catch(() => alert('エラーが発生しました。'));
+  });
+  </script>    
+    <style>.max_temp{display:inline-block !important}.min_temp{display:inline-block !important}.temp{display:block !important}.rain_s{display:block !important}.pop-rain{undefined}.speed-wind{undefined}.deg-wind{undefined}.w_snow{undefined}.w_bg{background:linear-gradient(to right,#ffffff, #fff)}</style><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons-wind.css"><link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script type="text/javascript">weather_value=7;lat = 35.248055;lon =136.780273;inputText1 = "愛知県稲沢市";search_add = "愛知県稲沢市";</script><script src="https://sitecreation.co.jp/wp-content/themes/emanon-premium-child/tpl/weather.js"></script><link id="PageStyleSheet" rel="stylesheet" href="https://sitecreation.co.jp/wp-content/themes/emanon-premium-child/tpl/style.css"><div id="weather-wrapper"><div id="weather1"></div><div id="weather2"></div>
+
+</html>
